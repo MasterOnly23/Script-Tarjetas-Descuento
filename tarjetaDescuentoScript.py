@@ -3,6 +3,7 @@ import os
 import openpyxl
 from openpyxl.styles import PatternFill
 from datetime import datetime
+from enviarMail import enviar_mail
 
 date_str = datetime.now().strftime('%d-%m-%Y')
 
@@ -120,3 +121,5 @@ wb.save(file_path_processed)
 
 
 print("Proceso terminado")
+
+enviar_mail(file_path_processed, date_str)

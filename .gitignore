@@ -1,5 +1,6 @@
 venv/
 Files/
 FileProcessed/
+__pycache__/
 .env
 *.bat

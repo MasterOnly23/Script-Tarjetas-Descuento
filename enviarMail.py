@@ -16,7 +16,7 @@ def enviar_mail(file_path, date_str):
 
         msg['From'] = fromaddr
         msg['To'] = ", ".join(toaddr)
-        msg['Subject'] = config('SUBJECT_MAIL') + date_str
+        msg['Subject'] = config('SUBJECT_MAIL')+ ' ' + date_str
 
         body = config('BODY_MAIL')
 

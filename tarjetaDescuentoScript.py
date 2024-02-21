@@ -4,7 +4,9 @@ import openpyxl
 from openpyxl.styles import PatternFill
 from datetime import datetime
 
-file_path = config('FILE_PATH')
+date_str = datetime.now().strftime('%d-%m-%Y')
+
+file_path = config('FILE_PATH') + ' ' + date_str + config('FILE_EXTENSION')
 
 #cargar workbook
 wb = openpyxl.load_workbook(file_path)
@@ -103,9 +105,14 @@ for sheet in [sheet, sheet2, sheet3]:
         sheet.column_dimensions[column[0].column_letter].width = adjusted_width
 
 
+#Filtros
+sheet.auto_filter.ref = sheet.dimensions
+sheet2.auto_filter.ref = sheet2.dimensions
+sheet3.auto_filter.ref = sheet3.dimensions
+
+
 #Save workbook  
-date_str = datetime.now().strftime('%Y-%m-%d')
-filename_save = date_str + config('FILENAME_SAVE')
+filename_save = date_str + ' ' + config('FILENAME_SAVE')
 
 file_path_processed = os.path.join(config('FILE_PATH_PROCESSED'), filename_save)
 wb.save(file_path_processed)

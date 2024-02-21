@@ -29,12 +29,12 @@ pip install openpyxl python-decouple
 ### Uso
 Para usar este script, debes tener un archivo de configuración .env en el mismo directorio que el script. Este archivo debe contener las siguientes variables:
 
-FILE_PATH: La ruta al archivo de Excel que deseas procesar.
-SHEET1: El nombre de la primera hoja en el archivo de Excel.
-SHEET2: El nombre que deseas para la segunda hoja creada en el archivo de Excel.
-SHEET3: El nombre que deseas para la tercera hoja creada en el archivo de Excel.
-FILENAME_SAVE: El nombre que deseas para el archivo de Excel procesado.
-FILE_PATH_PROCESSED: La ruta donde deseas guardar el archivo de Excel procesado.
+-`FILE_PATH: La ruta al archivo de Excel que deseas procesar.`
+-`SHEET1: El nombre de la primera hoja en el archivo de Excel.`
+-`SHEET2: El nombre que deseas para la segunda hoja creada en el archivo de Excel.`
+-`SHEET3: El nombre que deseas para la tercera hoja creada en el archivo de Excel.`
+-`FILENAME_SAVE: El nombre que deseas para el archivo de Excel procesado.`
+-`FILE_PATH_PROCESSED: La ruta donde deseas guardar el archivo de Excel procesado.`
 
 Una vez que hayas configurado tu archivo .env, puedes ejecutar el script con Python:
 

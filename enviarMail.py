@@ -6,6 +6,23 @@ from email.mime.base import MIMEBase
 from email import encoders
 from email.mime.text import MIMEText
 
+BODY_MAIL = """Estimado/a,
+
+Buen día,
+
+Adjunto el archivo de descuento de tarjetas procesado.
+
+Saludos cordiales.
+
+Juan Felipe Daza
+Analista de Sistemas
+Farmacias Dr. Ahorro 
+
+Estomba 44 / C1427COB
+Ciudad Autónoma de Buenos Aires / Argentina
+Tel. Fax.: 4588-9999
+www.farmaciasdrahorro.com.ar"""
+
 def enviar_mail(file_path, date_str):
     try:
         fromaddr = config('ADDRESS_MAIL')
@@ -18,7 +35,7 @@ def enviar_mail(file_path, date_str):
         msg['To'] = ", ".join(toaddr)
         msg['Subject'] = config('SUBJECT_MAIL')+ ' ' + date_str
 
-        body = config('BODY_MAIL')
+        body = BODY_MAIL
 
         msg.attach(MIMEText(body, 'plain'))
 
